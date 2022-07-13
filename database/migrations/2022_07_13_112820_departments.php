@@ -14,7 +14,7 @@ return new class extends Migration
     public function up() {
       if(Schema::hasTable('departments')) return;
       Schema::create('departments', function (Blueprint $table) {
-        $table->string('id')->primary();
+        $table->id();
         $table->string('name', 255);
         $table->string('email', 255)->unique();
         $table->boolean('status');
