@@ -16,29 +16,41 @@ class DepartmentSeeder extends Seeder {
     {
       DB::table('departments')->insert(
         [
-        'name' => 'IT',
-        'email' => 'it@aymakan.com.sa',
-        'status' => 1,
+          [
+            'name' => 'IT',
+            'email' => 'it@aymakan.com.sa',
+            'status' => 1,
+            'created_at' => now(),
+            'updated_at' => now(),
+          ],
+          [
+            'name' => 'Operations',
+            'email' => 'ops@aymakan.com.sa',
+            'status' => 1,
+            'created_at' => now(),
+            'updated_at' => now(),
+          ],
+          [
+            'name' => 'Sales',
+            'email' => 'sales@aymakan.com.sa',
+            'status' => 1,
+            'created_at' => now(),
+            'updated_at' => now(),
+          ],
+          [
+            'name' => 'CX',
+            'email' => 'cx@aymakan.com.sa',
+            'status' => 1,
+            'created_at' => now(),
+            'updated_at' => now(),
+          ],
+          [
+            'name' => 'CS',
+            'email' => 'cs@aymakan.com.sa',
+            'status' => 1,
+            'created_at' => now(),
+            'updated_at' => now(),
+          ],
         ]);
-      DB::table('departments')->insert([
-        'name' => 'Operations',
-        'email' => 'ops@aymakan.com.sa',
-        'status' => 1,
-      ]);
-      DB::table('departments')->insert([
-        'name' => 'Sales',
-        'email' => 'sales@aymakan.com.sa',
-        'status' => 1,
-      ]);
-      DB::table('departments')->insert( [
-        'name' => 'CX',
-        'email' => 'cx@aymakan.com.sa',
-        'status' => 1,
-      ]);
-      DB::table('departments')->insert([
-        'name' => 'CS',
-        'email' => 'cs@aymakan.com.sa',
-        'status' => 1,
-      ]);
     }
 }
