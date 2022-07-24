@@ -2,7 +2,7 @@
     <!-- Generate API Token -->
     <x-jet-form-section submit="createApiToken">
         <x-slot name="title">
-            {{ __('Create API Token') }}
+            {{ __('CreateTicket API Token') }}
         </x-slot>
 
         <x-slot name="description">
@@ -40,7 +40,7 @@
             </x-jet-action-message>
 
             <x-jet-button>
-                {{ __('Create') }}
+                {{ __('CreateTicket') }}
             </x-jet-button>
         </x-slot>
     </x-jet-form-section>

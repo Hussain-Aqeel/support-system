@@ -15,9 +15,11 @@ return new class extends Migration
     if(Schema::hasTable('tickets')) return;
     Schema::create('tickets', function (Blueprint $table) {
       $table->id();
+      $table->uuid('key')->nullable();
       $table->bigInteger('user_id')->nullable()->unsigned()->index();
       $table->string('title', 255);
       $table->string('description', 4028);
+      $table->string('status')->default('pending');
       $table->timestamps();
     });
   }
