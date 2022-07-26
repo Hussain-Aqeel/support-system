@@ -3,33 +3,34 @@
 namespace App\Http\Livewire\Ticket;
 
 use App\Models\Ticket;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
 use Livewire\Component;
 
-class CreateTicket extends Component {
-  
+class EditTicket extends Component {
+  public Ticket $ticketId;
   public $title;
   public $description;
-    
+  
   protected $rules = [
     'title' => 'bail|required',
     'description' => 'bail|required'
   ];
   
-  public function render() {
-      return view('livewire.ticket.create');
+  public function mount() {
+    $this->title = $this->ticketId->title;
+    $this->description = $this->ticketId->description;
   }
-    
-  public function save() {
+  
+  public function render() {
+    return view('livewire.ticket.edit');
+  }
+  
+  public function update() {
     // Validation here
     $this->validate();
     
-    Ticket::create([
-      'key' => Str::uuid(),
-      'user_id' => Auth::id(),
+    $this->ticketId->update([
       'title' => $this->title,
-      'description' => $this->description,
+      'description' => $this->description
     ]);
     
     // redirect to ticket list
@@ -37,7 +38,6 @@ class CreateTicket extends Component {
   }
   
   public function cancel() {
-    // redirect to ticket list
     return redirect()->route('ticket-list');
   }
 }

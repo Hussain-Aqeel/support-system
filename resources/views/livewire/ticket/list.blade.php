@@ -8,7 +8,7 @@
   </x-slot>
   
   <div class="flex justify-end">
-    <x-buttons.btn color="sky" wire:click="addView" class="mr-4 lg:mr-20 mt-5">
+    <x-buttons.btn color="sky" wire:click="addTicket" class="mr-4 lg:mr-20 mt-5">
       Add Ticket
     </x-buttons.btn>
   </div>
@@ -33,11 +33,16 @@
                   {{ $ticket->description }}
                 </x-table.cell>
                 <x-table.cell>
-                  <a href="{{ route('showTicket', [ 'ticketId' => $ticket->id]) }}"
+                  <a href="{{ route('show-ticket', [ 'ticketId' => $ticket->id]) }}"
                      class="inline-flex items-center justify-center rounded-md border
                      border-transparent bg-gray-700 px-4 py-2 text-sm font-medium text-white
                       shadow-sm hover:bg-gray-900 focus:outline-none focus:ring-2
                       focus:ring-gray-500 focus:ring-offset-2 sm:w-auto">Show</a>
+                  <a href="{{ route('edit-ticket', [ 'ticketId' => $ticket->id ]) }}"
+                     class="inline-flex items-center justify-center rounded-md border
+                     border-transparent bg-emerald-700 px-4 py-2 text-sm font-medium text-white
+                      shadow-sm hover:bg-emerald-900 focus:outline-none focus:ring-2
+                      focus:ring-emerald-500 focus:ring-offset-2 sm:w-auto">Edit</a>
                 </x-table.cell>
               </x-table.row>
             @endforeach

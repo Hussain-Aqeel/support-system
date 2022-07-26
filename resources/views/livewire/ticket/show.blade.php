@@ -3,7 +3,7 @@
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
       {{ __('Ticket') .' Details' }}
     </h2>
-    <a href="{{ route('list') }}"
+    <a href="{{ route('ticket-list') }}"
        class="text-gray-500 hover:text-gray-700">
       &DoubleLeftArrow; home
     </a>

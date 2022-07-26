@@ -20,8 +20,8 @@
         <x-table>
           <x-slot:head>
             <x-table.headings>ID</x-table.headings>
-            <x-table.headings>Title</x-table.headings>
-            <x-table.headings>Description</x-table.headings>
+            <x-table.headings>Name</x-table.headings>
+            <x-table.headings>Status</x-table.headings>
             <x-table.headings>Actions</x-table.headings>
           </x-slot:head>
           <x-slot:body>
@@ -33,11 +33,18 @@
                   {{ $department->status ? 'Active' : 'Inactive' }}
                 </x-table.cell>
                 <x-table.cell>
-                  <a href="{{ route('showDepartment', [ 'departmentId' => $department->id]) }}"
-                     class="inline-flex items-center justify-center rounded-md border
+                  <a
+                    href="{{ route('show-department', [ 'departmentId' => $department->id ])
+                     }}"
+                    class="inline-flex items-center justify-center rounded-md border
                      border-transparent bg-gray-700 px-4 py-2 text-sm font-medium text-white
                       shadow-sm hover:bg-gray-900 focus:outline-none focus:ring-2
                       focus:ring-gray-500 focus:ring-offset-2 sm:w-auto">Show</a>
+                  <a href="{{ route('edit-department', [ 'departmentId' => $department->id ]) }}"
+                     class="inline-flex items-center justify-center rounded-md border
+                     border-transparent bg-emerald-700 px-4 py-2 text-sm font-medium text-white
+                      shadow-sm hover:bg-emerald-900 focus:outline-none focus:ring-2
+                      focus:ring-emerald-500 focus:ring-offset-2 sm:w-auto">Edit</a>
                 </x-table.cell>
               </x-table.row>
             @endforeach

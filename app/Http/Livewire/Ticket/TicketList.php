@@ -7,8 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class TicketList extends Component
-{
+class TicketList extends Component {
   use WithPagination;
   
   public function render() {
@@ -22,8 +21,8 @@ class TicketList extends Component
     [ 'tickets' => $tickets]);
   }
   
-  public function addView() {
+  public function addTicket() {
     // redirect to add ticket view
-    return redirect()->route('addTicket');
+    return redirect()->route('add-ticket');
   }
 }

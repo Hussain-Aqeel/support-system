@@ -7,4 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Department extends Model {
     use HasFactory;
+  
+  /**
+   * The attributes that are mass assignable.
+   *
+   * @var string[]
+   */
+  protected $fillable = [
+    'name',
+    'email',
+    'status'
+  ];
 }
