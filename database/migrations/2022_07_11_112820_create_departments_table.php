@@ -12,9 +12,9 @@ return new class extends Migration
      * @return void
      */
     public function up() {
-      if(Schema::hasTable('department')) return;
-      Schema::create('department', function (Blueprint $table) {
-        $table->id();
+      if(Schema::hasTable('departments')) return;
+      Schema::create('departments', function (Blueprint $table) {
+        $table->id()->unsigned();
         $table->string('name', 255);
         $table->string('email', 255)->unique();
         $table->boolean('status');
@@ -28,6 +28,6 @@ return new class extends Migration
      * @return void
      */
     public function down() {
-      Schema::dropIfExists('department');
+      Schema::dropIfExists('departments');
     }
 };

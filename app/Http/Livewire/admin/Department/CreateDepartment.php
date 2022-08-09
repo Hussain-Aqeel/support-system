@@ -31,6 +31,8 @@ class CreateDepartment extends Component {
       'status' => $this->status,
     ]);
     
+    session()->flash('message', 'department is added successfully');
+    
     // redirect to department list
     return redirect()->route('department-list');
   }

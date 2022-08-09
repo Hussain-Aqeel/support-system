@@ -3,10 +3,6 @@
 namespace App\Http\Livewire\admin\Department;
 
 use App\Models\Department;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
-use Illuminate\Http\RedirectResponse;
 use Livewire\Component;
 
 class EditDepartment extends Component {
@@ -47,6 +43,8 @@ class EditDepartment extends Component {
       'email' => $this->email,
       'status' => $this->status
     ]);
+  
+    session()->flash('message', 'department is successfully updated');
   
     // redirect to ticket list
     return redirect()->route('department-list');

@@ -6,7 +6,9 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
+        "friendsofphp/php-cs-fixer": "^3.9",
         "guzzlehttp/guzzle": "^7.2",
+        "itsgoingd/clockwork": "^5.1",
         "laravel/framework": "^9.0",
         "laravel/jetstream": "^2.9",
         "laravel/sanctum": "^2.14.1",

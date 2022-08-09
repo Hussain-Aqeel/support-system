@@ -17,10 +17,16 @@
                         {{ __('Tickets') }}
                     </x-jet-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                  <x-jet-nav-link href="{{ route('department-list') }}" :active="request()->routeIs
+                      ('department-list')">
+                    {{ __('Departments') }}
+                  </x-jet-nav-link>
+                </div>
               <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                <x-jet-nav-link href="{{ route('department-list') }}" :active="request()->routeIs
-                    ('department-list')">
-                  {{ __('Departments') }}
+                <x-jet-nav-link href="{{ route('ticket-types-list') }}" :active="request()->routeIs
+                      ('ticket-types-list')">
+                  {{ __('Ticket Types') }}
                 </x-jet-nav-link>
               </div>
             </div>

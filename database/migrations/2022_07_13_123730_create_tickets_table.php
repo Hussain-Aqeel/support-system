@@ -17,8 +17,16 @@ return new class extends Migration
       $table->id();
       $table->uuid('key')->nullable();
       $table->bigInteger('user_id')->nullable()->unsigned()->index();
+//      $table->unsignedBigInteger('ticket_id');
+//      $table->foreign('ticket_id')
+//        ->references('id')
+//        ->on('ticket_types');
+      
+      $table->foreignId('ticket_type_id')
+        ->unsigned()
+        ->constrained();
       $table->string('title', 255);
-      $table->string('description', 4028);
+      $table->text('description');
       $table->string('status')->default('pending');
       $table->timestamps();
     });

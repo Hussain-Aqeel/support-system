@@ -1,3 +1,3 @@
-<label class="block text-sm font-bold text-gray-700 mt-1">
+<label class="block text-sm font-bold text-gray-700 my-2">
     {{ $slot }}
 </label>

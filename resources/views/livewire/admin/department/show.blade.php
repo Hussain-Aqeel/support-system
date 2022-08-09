@@ -1,6 +1,6 @@
 <x-slot name="header">
-  <div class="mb-7 flex justify-between">
-    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+  <div class="flex justify-between mb-7">
+    <h2 class="text-xl font-semibold leading-tight text-gray-800">
       {{ __('Department Details') }}
     </h2>
     <a href="{{ route('department-list') }}"
@@ -10,11 +10,11 @@
   </div>
 </x-slot>
 
-<div class="flex flex col bg-white min-h-screen">
-  <div class="w-4/5 container mx-auto">
+<div class="flex min-h-screen bg-white col">
+  <div class="container w-4/5 mx-auto">
     <div>
-      <h3 class="text-lg leading-6 font-medium text-gray-900">Department</h3>
-      <p class="mt-1 max-w-2xl text-sm text-gray-500">{{ '#' .$departmentId->id }}</p>
+      <h3 class="text-lg font-medium leading-6 text-gray-900">Department</h3>
+      <p class="max-w-2xl mt-1 text-sm text-gray-500">{{ '#' .$departmentId->id }}</p>
     </div>
     
     <div class="mt-5 border-t border-gray-200">
