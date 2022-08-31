@@ -56,10 +56,15 @@
                   {{ $ticket->status }}
                 </x-table.cell>
                 <x-table.cell>
-                  <a href="{{ route('show-ticket', [ 'ticketId' => $ticket->id]) }}"
+                  <a href="{{ route('user-show-ticket', [ 'ticketId' => $ticket->id]) }}"
                      class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-gray-700 border border-transparent rounded-md shadow-sm hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 sm:w-auto">Show</a>
-                  <a href="{{ route('edit-ticket', [ 'ticketId' => $ticket->id ]) }}"
+                  <a href="{{ route('user-edit-ticket', [ 'ticketId' => $ticket->id ]) }}"
                      class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-emerald-700 hover:bg-emerald-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 sm:w-auto">Edit</a>
+                  <a href="{{ route('user-edit-ticket', [ 'ticketId' => $ticket->id ]) }}"
+                     class="inline-flex items-center justify-center px-4 py-2 text-sm
+                     font-medium text-white border border-transparent rounded-md shadow-sm
+                     bg-fuchsia-700 hover:bg-fuchsia-900 focus:outline-none focus:ring-2
+                     focus:ring-fuchsia-500 focus:ring-offset-2 sm:w-auto">Start a conversation</a>
                 </x-table.cell>
               </x-table.row>
             @endforeach

@@ -3,7 +3,7 @@
 <div class="mx-2 mb-3 xl:w-96">
   <label for="search" class="inline-block mb-2 text-gray-700 form-label">{{ $name }}</label>
   <input
-    @if(isset($model)) wire:model="{{ $model }}" @endif
+    @if(isset($model)) wire:model.debounce.500ms="{{ $model }}" @endif
     {{ $attributes  }}
     type="search"
     id="search"

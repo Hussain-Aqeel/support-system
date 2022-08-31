@@ -60,10 +60,12 @@
                 </x-table.cell>
                 <x-table.cell>
                   <a
-                    href="{{ route('show-department', [ 'departmentId' => $department->id ])
+                    href="{{ route('admin-show-department', [ 'departmentId' =>
+                    $department->id ])
                      }}"
                     class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-gray-700 border border-transparent rounded-md shadow-sm hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 sm:w-auto">Show</a>
-                  <a href="{{ route('edit-department', [ 'departmentId' => $department->id ]) }}"
+                  <a href="{{ route('admin-edit-department', [ 'departmentId' =>
+                  $department->id ]) }}"
                      class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-emerald-700 hover:bg-emerald-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 sm:w-auto">Edit</a>
                 </x-table.cell>
               </x-table.row>

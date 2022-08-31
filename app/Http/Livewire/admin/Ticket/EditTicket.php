@@ -1,11 +1,10 @@
 <?php
-namespace App\Http\Livewire\Ticket;
 
-use App\Models\Department;
+namespace App\Http\Livewire\admin\Ticket;
+
 use App\Models\Ticket;
 use App\Models\TicketType;
 use Livewire\Component;
-
 
 class EditTicket extends Component {
     public Ticket $ticketId;
@@ -13,18 +12,17 @@ class EditTicket extends Component {
     public $description;
     public $ticketType;
     public $type;
-  
-  protected $rules = [
+
+    protected $rules = [
         'title' => 'bail|required',
         'description' => 'bail|required',
         'type' => 'required'
     ];
 
-    public function mount()
-    {
-      $this->title = $this->ticketId->title;
-      $this->description = $this->ticketId->description;
-      $this->ticketType = $this->ticketId->type;
+    public function mount() {
+        $this->title = $this->ticketId->title;
+        $this->description = $this->ticketId->description;
+        $this->ticketType = $this->ticketId->type;
     }
 
     public function render() {
@@ -32,7 +30,7 @@ class EditTicket extends Component {
           'types' => TicketType::all()
         ]);
     }
-    
+
     public function update() {
         // Validation here
         $this->validate();
@@ -46,10 +44,10 @@ class EditTicket extends Component {
         session()->flash('message', 'ticket is successfully updated');
 
         // redirect to ticket list
-        return redirect()->route('ticket-list');
+        return redirect()->route('admin-ticket-list');
     }
 
     public function cancel() {
-        return redirect()->route('ticket-list');
+        return redirect()->route('admin-ticket-list');
     }
 }

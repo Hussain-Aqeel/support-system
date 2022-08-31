@@ -10,12 +10,10 @@ use Laravel\Jetstream\Http\Livewire\ApiTokenManager;
 use Livewire\Livewire;
 use Tests\TestCase;
 
-class ApiTokenPermissionsTest extends TestCase
-{
+class ApiTokenPermissionsTest extends TestCase {
     use RefreshDatabase;
 
-    public function test_api_token_permissions_can_be_updated()
-    {
+    public function test_api_token_permissions_can_be_updated() {
         if (! Features::hasApiFeatures()) {
             return $this->markTestSkipped('API support is not enabled.');
         }

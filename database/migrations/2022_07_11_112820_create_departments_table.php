@@ -4,22 +4,23 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class () extends Migration {
     /**
      * Run the migrations.
      *
      * @return void
      */
     public function up() {
-      if(Schema::hasTable('departments')) return;
-      Schema::create('departments', function (Blueprint $table) {
-        $table->id()->unsigned();
-        $table->string('name', 255);
-        $table->string('email', 255)->unique();
-        $table->boolean('status');
-        $table->timestamps();
-      });
+        if (Schema::hasTable('departments')) {
+            return;
+        }
+        Schema::create('departments', function (Blueprint $table) {
+            $table->id()->unsigned();
+            $table->string('name', 255);
+            $table->string('email', 255)->unique();
+            $table->boolean('status');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -28,6 +29,6 @@ return new class extends Migration
      * @return void
      */
     public function down() {
-      Schema::dropIfExists('departments');
+        Schema::dropIfExists('departments');
     }
 };

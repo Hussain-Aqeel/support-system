@@ -4,16 +4,17 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class () extends Migration {
     /**
      * Run the migrations.
      *
      * @return void
      */
     public function up() {
-      if(Schema::hasTable('sessions')) return;
-      Schema::create('sessions', function (Blueprint $table) {
+        if (Schema::hasTable('sessions')) {
+            return;
+        }
+        Schema::create('sessions', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->foreignId('user_id')->nullable()->index();
             $table->string('ip_address', 45)->nullable();
@@ -28,8 +29,7 @@ return new class extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         Schema::dropIfExists('sessions');
     }
 };
