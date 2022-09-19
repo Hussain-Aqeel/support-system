@@ -5,25 +5,24 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Conversation extends Model
-{
+class Conversation extends Model {
     use HasFactory;
-    
+
     protected $fillable = [
       'sender_id',
       'receiver_id',
       'last_time_message'
     ];
-    
+
     public function messages() {
-      return $this->hasMany(Message::class);
+        return $this->hasMany(Message::class);
     }
-    
+
     public function user() {
-      return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
-  
-  public function ticket() {
-    return $this->belongsTo(Ticket::class);
-  }
+
+    public function ticket() {
+        return $this->belongsTo(Ticket::class);
+    }
 }

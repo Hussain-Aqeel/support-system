@@ -5,6 +5,12 @@
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
+        
+        @if (session('error'))
+          <div class="mb-4 font-medium text-sm text-red-600">
+            {{ session('error') }}
+          </div>
+        @endif
 
         @if (session('status'))
             <div class="mb-4 font-medium text-sm text-green-600">
@@ -43,6 +49,11 @@
                     {{ __('Log in') }}
                 </x-jet-button>
             </div>
+          <div class="mt-3.5">
+            <a href="{{ route('register') }}" class="underline text-sm text-gray-600 hover:text-gray-900">
+              You don't have an account? Sign up.
+            </a>
+          </div>
         </form>
     </x-jet-authentication-card>
 </x-guest-layout>

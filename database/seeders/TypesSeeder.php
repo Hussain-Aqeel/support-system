@@ -6,6 +6,8 @@
 
 
 
+
+
   use Illuminate\Support\Facades\DB;
 
   class TypesSeeder extends Seeder {

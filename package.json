@@ -23,6 +23,7 @@
     "dependencies": {
         "jquery": "^3.6.0",
         "laravel-echo": "^1.13.1",
-        "pusher-js": "^7.4.0"
+        "pusher-js": "^7.4.0",
+        "tw-elements": "^1.0.0-alpha12"
     }
 }

@@ -22,6 +22,7 @@ class CreateNewUser implements CreatesNewUsers {
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
+            'department_id' => ['required'],
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
         ])->validate();
 
@@ -29,9 +30,10 @@ class CreateNewUser implements CreatesNewUsers {
             'name' => $input['name'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
+            'department_id' => $input['department_id']
         ]);
-        
+
         // the default user role is employee.
-      return $user->assignRole('employee');
+        return $user->assignRole('employee');
     }
 }

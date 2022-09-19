@@ -1,7 +1,7 @@
 <x-slot name="header">
   <div class="flex justify-between">
     <h2 class="text-xl font-semibold leading-tight text-gray-800">
-      {{ __('New ticket') }}
+      {{ __('New ticket type') }}
     </h2>
   </div>
 </x-slot>

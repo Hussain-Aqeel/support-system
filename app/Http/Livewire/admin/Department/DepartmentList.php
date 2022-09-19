@@ -8,7 +8,8 @@ use Livewire\WithPagination;
 
 class DepartmentList extends Component {
     use WithPagination;
-    public $searchID;
+  public $showSearchBox = false;
+  public $searchID;
     public $searchName;
     public $searchEmail;
     public $searchStatus;
@@ -27,11 +28,15 @@ class DepartmentList extends Component {
     }
 
     public function resetSearch() {
-      $this->reset(['searchID', 'searchName', 'searchEmail', 'searchStatus']);
+        $this->reset(['searchID', 'searchName', 'searchEmail', 'searchStatus']);
     }
 
     public function addDepartment() {
         // redirect to add department view
         return redirect()->route('admin-add-department');
     }
+  
+  public function toggleSearchBox() {
+    $this->showSearchBox = !$this->showSearchBox;
+  }
 }

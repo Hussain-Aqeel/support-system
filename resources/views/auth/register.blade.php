@@ -28,6 +28,22 @@
                 <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
                 <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
+          
+            <div class="mt-4">
+              <x-form.dropdown
+                label="Department"
+                name="department_id"
+                label="Department">
+                <option value="" hidden selected>
+                  -- Department --
+                </option>
+                @foreach(\App\Models\Department::all() as $department)
+                    <option value="{{ $department->id }}">
+                      {{ $department->name }}
+                    </option>
+                @endforeach
+              </x-form.dropdown>
+            </div>
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">

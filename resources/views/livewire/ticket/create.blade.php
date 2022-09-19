@@ -21,6 +21,17 @@
             </x-form.dropdown>
             <x-form.error for="type" />
           </div>
+  
+          <div class="mt-1 md:w-1/2 lg:w-2/5">
+            <x-form.dropdown label="Priority" name="priority" label="Priority"
+                             model="priority">
+              <option value="" hidden selected>Select Priority</option>
+              @foreach($priorities as $priority)
+                <option value="{{ $priority->id }}">{{ $priority->name }}</option>
+              @endforeach
+            </x-form.dropdown>
+            <x-form.error for="priority" />
+          </div>
           
           <div class="mt-1 md:w-1/2 lg:w-2/5">
             <x-form.label>Title</x-form.label>
@@ -32,6 +43,13 @@
             <x-form.label>Description</x-form.label>
             <x-textarea name="description" model="description" />
             <x-form.error for="description" />
+          </div>
+  
+          <div class="mt-1 md:w-1/2 lg:w-2/5">
+            <x-form.label>Files</x-form.label>
+            <input type="file" wire:model="file">
+            <div wire:loading wire:target="file">Uploading...</div>
+            <x-form.error for="file" />
           </div>
         </div>
       

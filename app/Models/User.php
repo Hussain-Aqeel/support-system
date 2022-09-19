@@ -16,18 +16,20 @@ class User extends Authenticatable {
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
-  use HasRoles;
-  
-  
-  /**
-     * The attributes that are mass assignable.
-     *
-     * @var string[]
-     */
+    use HasRoles;
+
+
+    /**
+       * The attributes that are mass assignable.
+       *
+       * @var string[]
+       */
     protected $fillable = [
         'name',
         'email',
+        'department_id',
         'password',
+        'status'
     ];
 
     /**
@@ -59,4 +61,12 @@ class User extends Authenticatable {
     protected $appends = [
         'profile_photo_url',
     ];
+    
+    public function comments() {
+      return $this->hasMany(Comment::class);
+    }
+    
+    public function assignedTo() {
+      return $this->hasMany(AssignedTo::class);
+    }
 }

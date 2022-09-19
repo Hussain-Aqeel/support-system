@@ -16,16 +16,13 @@ class RouteServiceProvider extends ServiceProvider {
      *
      * @var string
      */
-    public const EMPLOYEE_HOME = 'employee-ticket-list';
-    public const MANAGER_HOME = 'manager-ticket-list';
-    public const ADMIN_HOME = 'admin-ticket-list';
-  
-  
-  /**
-     * Define your route model bindings, pattern filters, and other route configuration.
-     *
-     * @return void
-     */
+    public const HOME = '/ticket/list';
+
+    /**
+       * Define your route model bindings, pattern filters, and other route configuration.
+       *
+       * @return void
+       */
     public function boot() {
         $this->configureRateLimiting();
 

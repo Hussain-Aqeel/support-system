@@ -16,16 +16,11 @@ return new class () extends Migration {
         }
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
-            $table->uuid('key')->nullable();
+            $table->uuid('key')->nullable()->unique();
             $table->bigInteger('user_id')->nullable()->unsigned()->index();
-//      $table->unsignedBigInteger('ticket_id');
-//      $table->foreign('ticket_id')
-//        ->references('id')
-//        ->on('ticket_types');
-
             $table->foreignId('ticket_type_id')
-        ->unsigned()
-        ->constrained();
+            ->unsigned()
+            ->constrained();
             $table->string('title', 255);
             $table->text('description');
             $table->string('status')->default('pending');

@@ -29,11 +29,38 @@
             <x-form.error for="type" />
           </div>
           
+          @hasanyrole('admin|manager')
+            <div class="mt-1 md:w-1/2 lg:w-2/5">
+            <x-form.dropdown label="Priority" name="priority" label="Priority"
+                             model="priority">
+              <option value="{{ $ticketPriority->id }}" selected>
+                {{ $ticketPriority->name }}
+              </option>
+              @foreach($priorities as $priority)
+                @if($priority->id !== $ticketPriority->id)
+                  <option value="{{ $priority->id }}">
+                    {{ $priority->name }}
+                  </option>
+                @endif
+              @endforeach
+            </x-form.dropdown>
+            <x-form.error for="priority" />
+          </div>
+          @endhasanyrole
+          
           <div class="mt-1 md:w-1/2 lg:w-2/5">
             <x-form.label>Title</x-form.label>
             <x-input name="title" class="mb-3" model="title" />
             <x-form.error for="title" />
           </div>
+  
+          @hasanyrole('admin|manager')
+            <div class="mt-1 md:w-1/2 lg:w-2/5">
+              <x-form.label>Status</x-form.label>
+              <x-input name="status" class="mb-3" model="status" />
+              <x-form.error for="status" />
+            </div>
+          @endhasanyrole
           
           <div class="mt-1 md:w-1/2 lg:w-2/5">
             <x-form.label>Description</x-form.label>

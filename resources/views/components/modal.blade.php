@@ -1,23 +1,51 @@
-<div class="px-4 pt-5 pb-4 bg-white sm:p-6 sm:pb-4">
-    <div class="sm:flex sm:items-start">
-        <div class="flex items-center justify-center w-12 h-12 mx-auto bg-red-100 rounded-full shrink-0 sm:mx-0 sm:h-10 sm:w-10">
-            <svg class="w-6 h-6 text-red-600" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
-            </svg>
-        </div>
+@props(['title' => ''])
 
-        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-            <h3 class="text-lg">
-                {{ $title }}
-            </h3>
-
-            <div class="mt-2">
-                {{ $content }}
-            </div>
-        </div>
+<div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none
+      overflow-x-hidden overflow-y-auto"
+     id="exampleModalCenter"
+     tabindex="-1"
+     aria-labelledby="modalCenterTitle"
+     aria-modal="true"
+     role="dialog">
+  <div class="modal-dialog modal-dialog-centered relative w-auto pointer-events-none">
+    <div class="modal-content border-none shadow-lg relative flex flex-col
+    w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+      <div class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+        <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalScrollableLabel">
+          {{ $title }}
+        </h5>
+        <button
+          type="button"
+          class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none
+          opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black
+          hover:opacity-75 hover:no-underline"
+          data-bs-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+      <div class="modal-body relative p-4">
+        {{ $slot }}
+      </div>
+      <div
+        class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4
+        border-t border-gray-200 rounded-b-md">
+        <button
+          type="submit"
+          class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium
+          text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg
+          focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800
+          active:shadow-lg transition duration-150 ease-in-out"
+          data-bs-dismiss="modal">
+          Close
+        </button>
+        <button
+          type="submit"
+          class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium
+          text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700
+          hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+          active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1">
+          Save changes
+        </button>
+      </div>
     </div>
-</div>
-
-<div class="flex flex-row justify-end px-6 py-4 text-right bg-gray-100">
-    {{ $footer }}
+  </div>
 </div>

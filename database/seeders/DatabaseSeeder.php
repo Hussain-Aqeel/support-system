@@ -13,9 +13,9 @@ class DatabaseSeeder extends Seeder {
      */
     public function run() {
         $users = User::factory(10)->create();
-  
-      foreach($users as $user) {
-        $user->assignRole('employee');
-      }
+
+        foreach ($users as $user) {
+            $user->assignRole('employee');
+        }
     }
 }

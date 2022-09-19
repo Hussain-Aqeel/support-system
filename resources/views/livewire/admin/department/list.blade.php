@@ -7,37 +7,48 @@
     </div>
   </x-slot>
   
-  <div>
-    @if (session()->has('message'))
-      <x-success-msg>
-        {{ session('message') }}
-      </x-success-msg>
-    @endif
-  </div>
-  
   <!-- This example requires Tailwind CSS v2.0+ -->
-  <div class="px-4 sm:px-6 lg:px-8">
-    <div class="mt-3.5 px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between mb-2">
-        <p class="text-xl leading-loose tracking-wide text-gray-700">Search</p>
-        <x-buttons.btn color="blue" wire:click="resetSearch" class="lg:mr-40">
+  <div class="px-4 pb-14 sm:px-6 lg:px-8 mt-4">
+    @if(!$showSearchBox)
+      <button
+        title="search"
+        class="block mb-8 bg-sky-500 hover:bg-sky-600 transition-all duration-200 text-white
+       p-4
+      rounded-full" wire:click="toggleSearchBox">
+        @svg('bi-search')
+      </button>
+    @endif
+  
+    @if($showSearchBox)
+      <div>
+        <div class="flex w-fit items-center justify-between mb-2">
+          <button
+            title="close"
+            class="mb-8 bg-red-400 hover:bg-red-700 transition-all duration-200 text-white
+            p-2.5 rounded-full" wire:click="toggleSearchBox">
+            @svg('css-close')
+          </button>
+        </div>
+        <x-buttons.btn color="blue" wire:click="resetSearch" class="lg:mr-56 mb-4">
           reset
         </x-buttons.btn>
-      </div>
-      <div class="flex items-center justify-between">
-        <div class="flex p-2 border-t-2 mb-6">
-          <x-search model="searchID" placeholder="Search by ID" name="ID"/>
-          <x-search model="searchName" placeholder="Search by name" name="name"/>
-          <x-search model="searchEmail" placeholder="Search by email" name="email"/>
-          <x-search model="searchStatus" placeholder="Search by status" name="status"/>
+        <div class="flex w-fit items-center justify-between">
+          <div class="grid grid-cols-4 p-2 border-t-2">
+            <x-search model="searchID" placeholder="Search by ID" name="ID"/>
+            <x-search model="searchName" placeholder="Search by name" name="name"/>
+            <x-search model="searchEmail" placeholder="Search by email" name="email"/>
+            <x-search model="searchStatus"
+                      placeholder="Search by status; (1 = active) (0 = inactive)"
+                      name="status"/>
+          </div>
         </div>
       </div>
-      <div class="flex justify-end">
-        <x-buttons.btn color="sky" wire:click="addDepartment"
-                       class="mt-5 mr-4">
-          Add Department
-        </x-buttons.btn>
-      </div>
+    @endif
+  
+    <x-buttons.btn color="sky" wire:click="addDepartment"
+                   class="mt-5 mr-4">
+      Add Department
+    </x-buttons.btn>
       
     @if(count($departments))
       <div class="flex flex-col mt-8">

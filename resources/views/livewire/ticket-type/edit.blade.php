@@ -12,6 +12,7 @@
     <div>
       <div class="grid grid-cols-1 gap-y-6 gap-x-4">
         <div class="sm:col-span-4">
+          @role('admin')
           <div class="mt-1 md:w-1/2 lg:w-2/5">
             <x-form.dropdown label="Department" name="departments" label="Department"
                              model="department">
@@ -28,6 +29,7 @@
             </x-form.dropdown>
             <x-form.error for="department" />
           </div>
+          @endrole
           
           <div class="mt-1 md:w-1/2 lg:w-2/5">
             <x-form.label>Title</x-form.label>
@@ -52,6 +54,7 @@
           <x-buttons.btn color="sky" type="submit" class="ml-2.5">Save</x-buttons.btn>
         </div>
       </div>
+    </div>
     </div>
   </form>
 </div>

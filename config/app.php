@@ -30,6 +30,8 @@ return [
 
     'env' => env('APP_ENV', 'production'),
 
+    'mailer' => env('MAIL_USERNAME', 'h.aljassim@aymakan.com.sa'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode
