@@ -112,4 +112,10 @@ class TicketList extends Component {
   public function toggleSearchBox() {
     $this->showSearchBox = !$this->showSearchBox;
   }
+  
+  /** TODO:
+   * this method should be responsible for delegating the ticket responsibility to
+   * another person in the team
+  */
+  public function delegate($user_id) {}
 }

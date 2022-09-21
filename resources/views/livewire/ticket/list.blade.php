@@ -13,8 +13,7 @@
       <button
         title="search"
         class="block mb-8 bg-sky-500 hover:bg-sky-600 transition-all duration-200 text-white
-       p-4
-      rounded-full" wire:click="toggleSearchBox">
+         p-4 rounded-full" wire:click="toggleSearchBox">
         @svg('bi-search')
       </button>
     @endif

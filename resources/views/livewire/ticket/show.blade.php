@@ -13,8 +13,8 @@
 <div class="grid grid-cols-4 min-h-screen bg-white col px-20">
   <div class="container mx-auto col-span-2">
     <div>
-      <h3 class="text-lg font-medium leading-6 text-gray-900">Ticket</h3>
-      <p class="max-w-2xl mt-1 text-sm text-gray-500">{{ '#' .$ticketId->id }}</p>
+      <h3 class="font-bold text-3xl font-medium leading-6 text-gray-900">Ticket</h3>
+      <p class="max-w-2xl mt-1 text-3xl text-gray-500">{{ '#' .$ticketId->id }}</p>
     </div>
     
     <div class="mt-5 border-t border-gray-200">
@@ -47,6 +47,8 @@
         </x-description.item>
       </x-description.list>
     </div>
+    
+    <livewire:ticket.ticket-history />
   </div>
   <div class="ml-10 col-span-2 p-4 rounded-2xl">
     <p class="text-3xl font-bold tracking-wider mb-4">
