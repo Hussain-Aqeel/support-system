@@ -1,9 +1,3 @@
-{{--<div>--}}
-{{--    @foreach($assigned as $assignedTicket)--}}
-{{--        <p>{{ \App\Models\Ticket::whereId($ticket->ticket_id)->value('title') }}</p>--}}
-{{--    @endforeach--}}
-{{--</div>--}}
-
 <div>
   <x-slot name="header">
     <div class="flex justify-between">
@@ -15,7 +9,6 @@
   
   <!-- This example requires Tailwind CSS v2.0+ -->
   <div class="mt-3.5 pb-14 px-4 sm:px-6 lg:px-8">
-    
     @if(count($tickets))
       <div class="flex flex-col mt-8">
         <x-table>
@@ -56,9 +49,8 @@
           </x-slot:body>
         </x-table>
       </div>
+    @else
+      <h3 class="leading-3 mt-7">You have 0 assigned tickets</h3>
+    @endif
   </div>
-  @else
-    <h3 class="leading-3 mt-7">You have 0 assigned tickets</h3>
-  @endif
-</div>
 </div>

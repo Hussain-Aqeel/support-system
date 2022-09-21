@@ -7,28 +7,7 @@
     </div>
   </x-slot>
   
-  <!-- This example requires Tailwind CSS v2.0+ -->
   <div class="mt-3.5 px-4 sm:px-6 lg:px-8">
-{{--    <div class="flex items-center justify-between mb-2">--}}
-{{--      <p class="text-xl leading-loose tracking-wide text-gray-700">Search</p>--}}
-{{--      <x-buttons.btn color="blue" wire:click="resetSearch" class="lg:mr-56">--}}
-{{--        reset--}}
-{{--      </x-buttons.btn>--}}
-{{--    </div>--}}
-{{--    <div class="flex items-center justify-between">--}}
-{{--      <div class="flex p-2 border-t-2">--}}
-{{--        <x-search model="searchID" placeholder="Search by ID" name="ID"/>--}}
-{{--        <x-search model="searchTitle" placeholder="Search by title" name="title"/>--}}
-{{--        <x-search model="searchDescription" placeholder="Search by description"--}}
-{{--                  name="Description"/>--}}
-{{--        <x-search model="searchStatus" placeholder="Search by status"--}}
-{{--                  name="status"/>--}}
-{{--      </div>--}}
-{{--      <x-buttons.btn color="sky" wire:click="addTicket" class="mt-5 mr-4 lg:mr-20">--}}
-{{--        Add Ticket--}}
-{{--      </x-buttons.btn>--}}
-{{--    </div>--}}
-    
     @if(count($employees))
       <div class="flex flex-col mt-8">
         <x-table>
@@ -80,10 +59,9 @@
       <div class="mt-3">
         {{ $employees->links() }}
       </div>
+    @else
+      <h3 class="leading-3 mt-7">No users in the database</h3>
+    @endif
   </div>
-  @else
-    <h3 class="leading-3 mt-7">No users in the database</h3>
-  @endif
-</div>
 </div>
 
